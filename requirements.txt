@@ -1,0 +1,14 @@
+numpy==1.26.4
+pandas==2.3.3
+scipy==1.13.1
+scikit-learn==1.6.1
+
+pykalman==0.10.2
+
+opencv-python==4.10.0.84
+mediapipe==0.10.21
+
+dash==3.2.0
+dash-bootstrap-components==2.0.4
+dash_daq==0.6.0
+plotly==6.3.0
