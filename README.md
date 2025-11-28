@@ -18,7 +18,7 @@ L’application permet :
 - d’afficher les cycles de marche normalisés (0–100 %),
 - d’exporter les paramètres spatio-temporels dans un fichier Excel.
 
-Elle constitue un outil complet pour la biomécanique, l'analyse clinique et les études de locomotion.
+Un bouton Paramètres permet d’ajuster les caractéristiques d’entrée, dont la longueur du pied, utilisée pour le calcul de la longueur de pas, mais aussi les FPS, et les paramètres de la vidéo : le width et le height.
 
 ---
 
