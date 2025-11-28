@@ -1,11 +1,10 @@
-# video_to_landmarks.py
 import cv2
 import mediapipe as mp
 import pandas as pd
 import numpy as np
 import os
 
-# 33 noms MediaPipe Pose, en MAJUSCULES comme demandé
+# 33 noms MediaPipe Pose
 MP_LANDMARK_NAMES = [
     "NOSE",
     "LEFT_EYE_INNER", "LEFT_EYE", "LEFT_EYE_OUTER",
@@ -73,7 +72,7 @@ def extract_landmarks_from_video(
             "height": height
         }
 
-        # Ajout des 33 landmarks *4 colonnes* comme dans ton fichier
+        # Ajout des 33 landmarks *4 colonnes*
         if res.pose_landmarks:
             for name, lm in zip(MP_LANDMARK_NAMES, res.pose_landmarks.landmark):
                 row[f"{name}_x"] = lm.x
@@ -106,31 +105,3 @@ if __name__ == "__main__":
     output_file = r"C:\Users\t.marques\OneDrive - Institut\Bureau\IA Gait\Pipeline\AIGait_interface_test\src\interface2\tmp.xlsx"
     extract_landmarks_from_video(video_file, output_file)
 
-# import pandas as pd
-# from scipy.io import loadmat
-
-# # Chargement du .mat
-# mat = loadmat(
-#     r"C:\Users\t.marques\Downloads\test.mat",
-#     struct_as_record=False,
-#     squeeze_me=True
-# )
-
-# angles = mat["res_var_angle_t"]
-
-# # Extraction des champs dans un dict
-# results = {field: getattr(angles, field) for field in angles._fieldnames}
-
-# # Construction du DataFrame final
-# df = pd.DataFrame()
-
-# for name, arr in results.items():
-#     df[f"{name}_x"] = arr[:, 0]
-#     df[f"{name}_y"] = arr[:, 1]
-#     df[f"{name}_z"] = arr[:, 2]
-
-# # Export CSV
-# output_path = r"C:\Users\t.marques\Downloads\angles_export.csv"
-# df.to_csv(output_path, index=False)
-
-# print("CSV bien enregistré dans :", output_path)
